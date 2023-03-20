@@ -1,0 +1,33 @@
+<div class="paintingDetail">
+    <div class="painting">
+        <img src={{paintingData.imageUrl}} alt="">
+<!-- <h1 style="margin: 50px;">ahsgdha</h1> -->
+    </div>
+    <div class="details">
+        <div class="data">
+            <div class="paintingName">
+                <h1 class="textTitle" >{{paintingData.paintingName}}</h1>
+            </div>
+            <div class="artistName">
+                <h3>-- {{paintingData.artist}}</h3>
+            </div>
+
+            <div class="discription">
+                <span>{{paintingData.description}}</span>
+
+            </div>
+
+            <div class="price">
+                <h6 style="font-size: 2vw;">MRP</h6>
+                <h4 style="align-self: center;padding-right: 3px;padding-left: 3px;font-size: 3vw;">₹</h4>
+                <span style="color: rgb(179, 30, 30);">{{paintingData.price}}</span>
+            </div>
+
+            <div class="cartbutton">
+
+                <input type="button" value="Add To cart" (click)="addToCart()">
+
+            </div>
+        </div>
+    </div>
+</div>

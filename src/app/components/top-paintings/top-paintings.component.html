@@ -1,0 +1,20 @@
+<!-- <h1>ArtZone</h1>
+<ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/top">Top Paintings</a></li>
+    <li><a routerLink="/all">All Paintings</a></li>
+    <li><a routerLink="/cart">Cart</a></li>
+
+</ul> -->
+<app-header></app-header>
+
+<p></p>
+<div class="painting-grid">
+  <div class="painting-container" *ngFor="let i of paintingInfo" (click)="paintingDetails(i.paintingID)">
+    <img [src]="i.imageUrl" class="painting-image">
+    <label>Name: {{i.paintingName}} </label>
+    <label>Price: {{i.price}} </label>
+  </div>
+</div>
+
+

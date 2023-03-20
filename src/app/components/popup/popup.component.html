@@ -1,0 +1,28 @@
+<div class="container">
+<div class="container1">
+    <label for=""> Painting Name: {{reply.paintingName}} <button type="submit1"
+            (click)="edit1=true;edit2=false;edit3=false;edit4=false;restoreNewValue()">Edit</button></label><br>
+    <div class="container1" *ngIf="edit1"><label for="">New Painting Name: <input type="text"
+                [(ngModel)]="newValue"><button type="submit"
+                (click)="sendnewdata('paintingName');restoredit();openpopup()">Submit</button><button type="submit1"
+                (click)="edit1=false; restoreNewValue()">Cancel</button></label> </div>
+    <label for=""> Desription: {{reply.description}} <button type="submit1"
+            (click)="edit2=true;edit1=false;edit3=false;edit4=false;;restoreNewValue()">Edit</button></label><br>
+    <div class="container1" *ngIf="edit2"><label for="">New Description: <input type="text"
+                [(ngModel)]="newValue"></label><button type="submit"
+            (click)="sendnewdata('description');restoredit();openpopup()">Submit</button><button type="submit1"
+            (click)="edit2=false; restoreNewValue()">Cancel</button></div>
+    <label for=""> Price: {{reply.price}} <button type="submit1" (click)="edit3=true;edit2=false;edit1=false;edit4=false;restoreNewValue()">Edit</button></label> <br>
+    <div class="container1" *ngIf="edit3"><label for="">New Price: <input type="number" [(ngModel)]="newValue">
+            <button type="submit" (click)="sendnewdata('price');restoredit();openpopup()">Submit</button><button type="submit1"
+                (click)="edit3=false; restoreNewValue()">Cancel</button></label>
+    </div>
+    <label for=""> Available: {{reply.available}} <button type="submit1"
+            (click)="edit4=true;edit2=false;edit3=false;edit1=false;restoreNewValue()">Edit</button></label><br>
+    <div class="container1" *ngIf="edit4"><label for="">Available Paintings: <input type="number"
+                [(ngModel)]="newValue"><button (click)="sendnewdata('available'); restoredit();openpopup()"
+                type="submit">Submit</button> <button type="submit1" (click)="edit4=false; restoreNewValue()">Cancel</button> </label>
+    </div>
+    <label for=""><button type="submit" (click)="restoredit();closepopup()">Keep Original</button></label>
+</div>
+</div>

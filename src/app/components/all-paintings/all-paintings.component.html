@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<p></p>
+<div class="painting-grid">
+  <div class="painting-container" *ngFor="let i of paintingInfo" (click)="paintingDetails(i.paintingID)">
+    <img [src]="i.imageUrl" class="painting-image">
+    <label>Name: {{i.paintingName}} </label>
+    <br>
+    <label>Price: Rs {{i.price}} </label>
+  </div>
+</div>

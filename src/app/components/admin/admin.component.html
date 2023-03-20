@@ -1,0 +1,95 @@
+<div class="box-container">
+    <div class="box box-1"><label for="">{{analysis?.Total_Products}} Paintings</label> </div>
+    <div class="box box-2"> <label for="">{{analysis?.Available_Stock}} Available </label></div>
+    <div class="box box-3"><label for="">{{analysis?.Paintings_Sold}} Sold</label> </div>
+    <div class="box box-4"> <label for=""> Rs.{{analysis?.Total_SALE}} SALE</label></div>
+  </div> <br>
+  
+
+<div class="container">
+    <button class="button" (click)="add_painting=true;remove_painting=false; ">Add
+        Painting</button>
+    <button class="button"
+        (click)="remove_painting=true;callingAllPaintings(); add_painting=false">Remove / Edit
+        Painting</button>   
+</div> <br>
+
+
+<div class="container1" *ngIf="add_painting">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div>
+            <label for="">Add Image: <input style="align-self: center;" type="file" id="imageInput" accept="image/*"
+                (change)="onImageSelection($event)" formControlName="image"></label><br>
+                <div *ngIf="form.get('image')?.invalid && (form.get('image')?.dirty || form.get('image')?.touched)" class="error">
+                  image required!
+                </div>
+        </div> 
+       
+
+        <div>
+          <label for="name">Painting Name:<input type="text" id="paintingName" name="paintingName" formControlName="paintingName" [(ngModel)]="paintingName" placeholder="Hamsa Damayanti" required>
+          </label>
+          <div *ngIf="form.get('paintingName')?.invalid && (form.get('paintingName')?.dirty || form.get('paintingName')?.touched)" class="error">
+            <span>  painting name required!</span>
+              </div>
+          </div>
+       
+        <div>
+          <label for="artist">Artist Name: <input type="text" id="artistName" name="artistName" value="artistName" formControlName="artistName" [(ngModel)]="artistName" placeholder="Raja Ravi Verma" required>
+          </label>
+          <div *ngIf="form.get('artistName')?.invalid && (form.get('artistName')?.dirty || form.get('artistName')?.touched)" class="error"  >
+           <label for=""> artist name required!</label> 
+          </div>
+        </div>
+        <div>
+          <label for="price">Price: <input type="number" id="price" name="price" value="price" formControlName="price" [(ngModel)]="price" placeholder="XXXX"  required>
+          </label>
+          <div *ngIf="form.get('price')?.invalid && (form.get('price')?.dirty || form.get('price')?.touched)" class="error" >
+            <div *ngIf="form.get('price')?.errors?.['required']">price required!</div>
+            <div *ngIf="form.get('price')?.errors?.['min']">must be a positive value!</div>
+
+          </div>
+        </div>
+        <div>
+          <label for="size">Size: <input type="text" id="size" name="size" value="size" formControlName="size" [(ngModel)]="size" placeholder="width x height" required>
+          </label>
+          <div *ngIf="form.get('size')?.invalid && (form.get('size')?.dirty || form.get('size')?.touched)" class="error">
+            <div *ngIf="form.get('size')?.errors?.['required']">size required!</div>
+            <div *ngIf="form.get('size')?.errors?.['invalidSizeFormat']"> Invalid size format. Please use the format 'width x height' (e.g. 10 x 20)!</div>
+          </div>
+        </div>
+        <div>
+          <label for="description">Description: <textarea id="description" name="description" value="description" formControlName="description" [(ngModel)]="description" placeholder="More Info: Type,Exclusivity,Material Used  " required></textarea>
+          </label>
+          <div *ngIf="form.get('description')?.invalid && (form.get('description')?.dirty || form.get('description')?.touched)" class="error">
+            description required!
+          </div>
+        </div>
+        <div>
+          <label for="available">Available:<input type="number" id="available" name="available" value="available" placeholder="Number of available pieces" formControlName="available" [(ngModel)]="available">
+          </label>
+          <div *ngIf="form.get('available')?.invalid && (form.get('available')?.dirty || form.get('available')?.touched)" class="error">
+            <div *ngIf="form.get('available')?.errors?.['required']">Available required!</div>
+            <div *ngIf="form.get('available')?.errors?.['min']"> must be a positive value!</div>
+          </div>
+        </div>
+        <button type="submit" [disabled]="!form.valid">Add Painting</button>
+      </form>
+      
+</div>
+
+
+
+<div class="container1" *ngIf="remove_painting">
+    <div class="painting-grid">
+        <div class="painting-container" *ngFor="let i of paintingInfo">
+          <img [src]="i.imageUrl" class="painting-image">
+          <label >Name: {{i.paintingName}} </label>
+          <label >Price: Rs {{i.price}} </label>
+          <button type="submit" (click)="openDialog(i.paintingName);open=true">Edit Details</button><br>
+          <button type="submit1" (click)="removePainting(i.paintingName);openPop()">Delete Painting</button><br>
+        </div>
+      </div>
+</div>
+

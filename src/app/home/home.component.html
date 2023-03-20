@@ -1,0 +1,30 @@
+<!-- <h1>ArtZone</h1>
+
+
+<ul>
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="top">Top Paintings</a></li>
+    <li><a routerLink="all">All Paintings</a></li>
+    <li><a routerLink="cart">Cart</a></li>
+
+</ul> -->
+<app-header></app-header>
+<p></p>
+
+<div class="homepage-container" *ngIf="!isAdmin()">
+    <h2>"Welcome to our online painting store!"</h2>
+    <p>Discover amazing paintings and get upto 70% off on your first purchase!</p>
+    <div class="discount-circle">
+      <span>{{discount}}% off</span>
+    </div>
+    <img src="{{imageURL}}" alt="My image" width="500" height="350">
+    <!-- <img src="/assets/download.jpeg" alt="My image" width="300" height="200"> -->
+
+    <div class="footer">
+      <p>Free Delivery | Interesting Discounts | Win exciting prizes by purchasing!</p>
+      <h3>-------------------------All rights reserved!!!-------------------------</h3>
+    </div>
+</div>
+
+<app-admin *ngIf="isAdmin()"></app-admin>
+  

@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="container1" *ngIf="!forgotPass">
+    <button (click)="editButton()">Edit</button>
+    <label for="username">Email <input style="margin-left: 52px;" type="text" [(ngModel)]="username" readonly></label><br>
+
+    <label for="name">Name <input style="margin-left: 48px;" type="text" [(ngModel)]="name" [disabled]="readonly"></label><br>
+
+    <label for="gender">Gender <select style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);width: 72%;border-radius: 5px;padding: 10px;margin-left: 40px; border: none ;margin-bottom: 15px;" (value)="gender" [disabled]="readonly">
+        <option value="Male" >Male</option>
+        <option value="Female">Female</option>
+      </select></label><br>
+
+    <label for="Address">Address<input style="margin-left: 35px;" type="text" [(ngModel)]="address" [disabled]="readonly"></label><br>
+
+    <label for="contact">Contact <input style="margin-left: 38px;" type="text" [(ngModel)]="contact" [disabled]="readonly"></label><br>
+
+    <button *ngIf="!readonly" (click)="saveChange()" >Save</button>
+    <button (click)="resetPass()" >Reset Password</button>
+    
+</div>
+
+<div class="container1" *ngIf="forgotPass">
+        <button (click)="editButton()">Edit</button>
+        <label for="painting-name">Verification Code <input type="text" [(ngModel)]="code"></label><br>
+    
+        <label for="painting-name">New Password <input type="text" [(ngModel)]="newPassword"></label><br>
+
+        <label for="painting-name">Confirm Password <input type="password" [(ngModel)]="newPasswordConfirm"></label><br>
+
+        <button (click)="resetPassSubmit()">RESET</button>
+
+    </div>

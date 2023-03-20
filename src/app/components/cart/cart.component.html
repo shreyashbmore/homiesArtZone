@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="painting-grid">
+    <div class="painting-container" *ngFor="let i of paintingInfo">
+      <img [src]="i.imageUrl" class="painting-image">
+      <label>Name: {{i.paintingName}} </label>
+      <label>Price: {{i.price}} </label>
+
+      <div class="container">
+        <input type="button" (click)="decrementValue(i)" value="-" />
+        <input type="text" name="quantity" value="{{i.count}}" maxlength="2" max="10" size="1" id="number" />
+        <input type="button" (click)="incrementValue(i)" value="+" />
+        </div>
+
+    </div>
+  </div>
+  
+  <div class="bill">
+    <table style="border: solid;">
+      <tr style="border: solid;">
+        <th style="border: solid;">Painting Name</th>
+        <th style="border: solid;">Quantity</th>
+        <th style="border: solid;">Price</th>
+        <th style="border: solid;">Total</th>
+      </tr>
+<tr class="billContent" *ngFor="let i of paintingInfo">
+        <td >{{i.paintingName}}</td>
+        <td>{{i.count}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.count * i.price}}</td>
+
+      </tr>
+      <p>Total Price: {{ getTotalPrice() }}</p>
+    </table>
+    <br>
+    <button (click)="createPurchaseList(); callpopup()">Buy</button>
+  </div>
+
+  

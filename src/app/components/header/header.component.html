@@ -1,0 +1,30 @@
+<h1>ArtZone</h1>
+<ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/top">Top Paintings</a></li>
+    <li><a routerLink="/all">All Paintings</a></li>
+    <li *ngIf="isUserIn() && !isAdmin()"><a routerLink="/cart">Cart</a></li>
+
+
+    <li *ngIf="!isSignIn()"><a (click)="signIn()" style="cursor: pointer;">Sign In</a></li>
+    <li *ngIf="isSignIn()"><a (click)="signOut()" style="cursor: pointer;">Sign Out</a></li>
+
+</ul>
+<!-- <ul style="position: absolute; top: 19.45%; left: 80%; 
+transform: translate(-50%, -50%); font-size: 1.5em; font-style: italic; 
+color: rgb(202, 102, 59);">
+    <li *ngIf="isSignIn()">
+        <b  style="cursor: pointer;" (click)="toProfile()">"Hello {{userName}}!!"
+        </b>
+    </li>
+</ul> -->
+
+<ul style="position: absolute; top: 65px; left: 80%; 
+transform: translate(-50%, -50%); font-size: 1.5em; font-style: italic; 
+color: rgb(255, 255, 255); min-width: max-content;">
+    <li *ngIf="isSignIn()">
+        <b  style="cursor: pointer;" (click)="toProfile()">"Hello {{userName}}!!"
+        </b>
+    </li>
+</ul>
+

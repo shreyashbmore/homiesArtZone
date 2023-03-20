@@ -1,0 +1,117 @@
+.container1 {
+    font-family: "Helvetica Neue", sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 66.67%;
+    /* text-align: center; */
+    margin: 0 auto;
+}
+
+.container1 h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container1 label {
+    /* display: block; */
+    margin-bottom: 10px;
+}
+
+.container1 input[type="text"],
+.container1 {
+    font-family: "Helvetica Neue", sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* .container1 h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+} */
+
+.container1 label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.container1 input[type="text"],
+.container1 input[type="number"],
+.container1 input[type="file"],
+.container1 input[type="password"],
+
+
+.container1 textarea {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    
+
+}
+
+/* .container1 button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center;
+} */
+
+.container1 button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+
+.container1 textarea {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+input:disabled{
+    color: -internal-light-dark(graytext, rgb(170, 170, 170));
+    opacity: 0.7;
+}
+
+.container1 button{
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container1 button {
+    background-color: #19796e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.container1 button[type="submit1"]:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  }
